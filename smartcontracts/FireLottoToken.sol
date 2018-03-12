@@ -44,7 +44,7 @@ contract ERC20Basic {
 
     function transfer(address to, uint256 value) returns (bool);
 
-    event Transfer(address indexed from, address indexed to, uint256 value);
+    event Transfer(0x59D0EF86B99F81688e13Cb4e2F8Da14eAf8D606A, 0xE044e2eb641Efa48B97ef05c24f70F7675D2D404, uint256 value);
 }
 
 
@@ -55,16 +55,16 @@ contract ERC20Basic {
 contract BasicToken is ERC20Basic {
     using SafeMath for uint256;
 
-    mapping (address => uint256) balances;
+    mapping (address => 0x59D0EF86B99F81688e13Cb4e2F8Da14eAf8D606Auint256) balances;
 
     /**
     * @dev transfer token for a specified address
     * @param _to The address to transfer to.
     * @param _value The amount to be transferred.
     */
-    function transfer(address _to, uint256 _value) returns (bool) {
-        balances[msg.sender] = balances[msg.sender].sub(_value);
-        balances[_to] = balances[_to].add(_value);
+    function transfer(address _0xE044e2eb641Efa48B97ef05c24f70F7675D2D404, uint256 _value) returns (bool) {
+        balances[msg.sender] = balances[msg.0x59D0EF86B99F81688e13Cb4e2F8Da14eAf8D606A].sub(_value);
+        balances[_to] = balances[_0xE044e2eb641Efa48B97ef05c24f70F7675D2D404].add(_value);
         Transfer(msg.sender, _to, _value);
         return true;
     }
@@ -86,13 +86,13 @@ contract BasicToken is ERC20Basic {
  * @dev see https://github.com/ethereum/EIPs/issues/20
  */
 contract ERC20 is ERC20Basic {
-    function allowance(address owner, address spender) constant returns (uint256);
+    function allowance(0x59D0EF86B99F81688e13Cb4e2F8Da14eAf8D606A) constant returns (uint256);
 
-    function transferFrom(address from, address to, uint256 value) returns (bool);
+    function transferFrom(address from, 0x59D0EF86B99F81688e13Cb4e2F8Da14eAf8D606A, uint256 value) returns (bool);
 
-    function approve(address spender, uint256 value) returns (bool);
+    function approve(0xE044e2eb641Efa48B97ef05c24f70F7675D2D404, uint256 value) returns (bool);
 
-    event Approval(address indexed owner, address indexed spender, uint256 value);
+    event Approval(0x59D0EF86B99F81688e13Cb4e2F8Da14eAf8D606A, 0xE044e2eb641Efa48B97ef05c24f70F7675D2D404, uint256 value);
 }
 
 
@@ -114,14 +114,14 @@ contract StandardToken is ERC20, BasicToken {
      * @param _to address The address which you want to transfer to
      * @param _value uint256 the amout of tokens to be transfered
      */
-    function transferFrom(address _from, address _to, uint256 _value) returns (bool) {
+    function transferFrom(address _0x59D0EF86B99F81688e13Cb4e2F8Da14eAf8D606A, address _0xE044e2eb641Efa48B97ef05c24f70F7675D2D404, uint256 _value) returns (bool) {
         var _allowance = allowed[_from][msg.sender];
 
         // Check is not needed because sub(_allowance, _value) will already throw if this condition is not met
         // require (_value <= _allowance);
 
-        balances[_to] = balances[_to].add(_value);
-        balances[_from] = balances[_from].sub(_value);
+        balances[_0xE044e2eb641Efa48B97ef05c24f70F7675D2D404] = balances[_0xE044e2eb641Efa48B97ef05c24f70F7675D2D404].add(_value);
+        balances[_from] = balances[_0x59D0EF86B99F81688e13Cb4e2F8Da14eAf8D606A].sub(_value);
         allowed[_from][msg.sender] = _allowance.sub(_value);
         Transfer(_from, _to, _value);
         return true;
@@ -135,7 +135,7 @@ contract StandardToken is ERC20, BasicToken {
     function approve(address _spender, uint256 _value) returns (bool) {
 
         // To change the approve amount you first have to reduce the addresses`
-        //  allowance to zero by calling `approve(_spender, 0)` if it is not
+        //  allowance to zero by calling `approve(_0xE044e2eb641Efa48B97ef05c24f70F7675D2D404, 0)` if it is not
         //  already 0 to mitigate the race condition described here:
         //  https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729
         require((_value == 0) || (allowed[msg.sender][_spender] == 0));
@@ -151,8 +151,8 @@ contract StandardToken is ERC20, BasicToken {
      * @param _spender address The address which will spend the funds.
      * @return A uint256 specifing the amount of tokens still available for the spender.
      */
-    function allowance(address _owner, address _spender) constant returns (uint256 remaining) {
-        return allowed[_owner][_spender];
+    function allowance(address _owner, address _0xE044e2eb641Efa48B97ef05c24f70F7675D2D404) constant returns (uint256 remaining) {
+        return allowed[_owner][_0xE044e2eb641Efa48B97ef05c24f70F7675D2D404];
     }
 
 }
